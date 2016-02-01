@@ -18,7 +18,7 @@ build:
 
   pre_ci_boot:
     image_name: quay.io/shippablequay/sample_node_02
-    image_tag: latest
+    image_tag: test
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
