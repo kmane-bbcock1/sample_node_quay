@@ -32,5 +32,5 @@ build:
 
 integrations:
   hub:
-    - integrationName: ship-quay  
-      type: quay
+    - integrationName: ship-quay1  
+      type: quay.io
