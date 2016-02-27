@@ -14,10 +14,10 @@ env:
 
 build:
   pre_ci:
-    - docker build -t=quay.io/shippablequay/shiphitchcock1_sample_node_quay_bb .
+    - docker build -t=quay.io/shippablequay/shiphitchcock1_sample_node_bb .
 
   pre_ci_boot:
-    image_name: quay.io/shippablequay/shiphitchcock1_sample_node_quay_bb
+    image_name: quay.io/shippablequay/shiphitchcock1_sample_node_bb
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -27,12 +27,9 @@ build:
     - ls -al
 
   post_ci:
-    - docker push quay.io/shippablequay/shiphitchcock1_sample_node_quay_bb
+    - docker push quay.io/shippablequay/shiphitchcock1_sample_node_bb
 
 integrations:
   hub:
     - integrationName: ship-quay
-      type: quay
-      branches:
-        only:
-          - master 
+      type: quay.io
