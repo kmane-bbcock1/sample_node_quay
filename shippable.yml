@@ -27,6 +27,7 @@ build:
     - ls -al
 
   post_ci:
+    - docker build -t=quay.io/shippablequay/shiphitchcock1_sample_node_bb:28feb
     - docker push quay.io/shippablequay/shiphitchcock1_sample_node_bb:28feb
 
 integrations:
