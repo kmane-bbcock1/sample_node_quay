@@ -4,7 +4,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 0.10.25
+ # - 0.10.25
   
 env:
   global:
@@ -16,7 +16,7 @@ env:
 
 build:
   pre_ci:
-    - docker build -t=quay.io/shippablequay/shiphitchcock1_sample_node_bb .
+    - docker build -t=quay.io/shippablequay/shiphitchcock1_sample_node_bb:$BRANCH.$BUILD_NUMBER .
 
   pre_ci_boot:
     image_name: quay.io/shippablequay/shiphitchcock1_sample_node_bb
@@ -29,7 +29,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push quay.io/shippablequay/shiphitchcock1_sample_node_bb
+    - docker push quay.io/shippablequay/shiphitchcock1_sample_node_bb:$BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
